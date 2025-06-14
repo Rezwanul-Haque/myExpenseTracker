@@ -12,14 +12,17 @@ import React from 'react'
 const { height } = Dimensions.get('window');
 
 const ScreenWrapper = ({style, children}: ScreenWrapperProps) => {
-  const paddingTop = Platform.OS === 'ios' ? height * 0.06 : 50
+  const paddingTop = Platform.OS === 'ios' ? height * 0.06 : 30
   return (
     <View style={[{
       paddingTop,
       flex: 1,
       backgroundColor: colors.neutral900
     }, style]}>
-      <StatusBar barStyle="light-content" />
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor={colors.neutral900}
+      />
       {children}
     </View>
   )
